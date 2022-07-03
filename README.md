@@ -45,3 +45,8 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ### SRS document + ER diagram + DFD + Use Case diagram link : https://drive.google.com/drive/folders/1y7yqPdL7S5N13r7-HTusNkfccDdk6XdT?usp=sharing
 
 ### Test Report link : https://drive.google.com/drive/folders/1y7yqPdL7S5N13r7-HTusNkfccDdk6XdT?usp=sharing
+
+### Project Demo Pages :
+
+<img width="950" alt="med" src="https://user-images.githubusercontent.com/54628721/177031625-0a82ae4d-28d8-4468-a1d3-42e34a8ac1ff.png">
+<img width="960" alt="medq" src="https://user-images.githubusercontent.com/54628721/177031630-c34df440-30e9-449e-b994-f60c6f8149bf.png">
