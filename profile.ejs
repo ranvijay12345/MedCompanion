@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@267;300&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="profile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <nav id="navbar">
+                <div id="logo">
+                    <img src="images/logo.jpg" alt="MedCompanion">
+                </div>
+                <ul>
+                    <li class="item"><a href="/">Home</a></li>
+                    <li class="item"><a href="/consultation">Consultation</a></li>
+                    <li class="item"><a href="/lab_test">Lab tests</a></li>
+                    <li class="item"><a href="/medicine">Medicines</a></li>
+                    <li class="item"><a href="/contact">Contact us</a></li>
+                </ul>
+                <div id="enroll" class="btn">
+                    <form action="/logout" method="post">
+                        <button type="submit" id="login">logout</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="a123">
+                <div class="row1">
+                    <div class="col-md-4 mt-1">
+                        <div class="card text-center sidebar">
+                            <div class="card-body1">
+                                <img src="/images/profile.jfif" class="rounded-circle" width="150">
+                                <div class="mt-3">
+                                    <h3><%= usr.f %></h3>
+                                    <p><%= usr.Email %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row1">
+                <div class="col-md-8 mt-1">
+                    <div class="card mb-3 content">
+                        <div class="card-body">
+                            <div class="user-details1">User Details</div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    User ID
+                                </div>
+                                <div class="col-md-9 text-secondary id">
+                                    <%= usr.Id %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Full Name
+                                </div>
+                                <div class="col-md-9 text-secondary name">
+                                    <%= usr.Name %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Gender
+                                </div>
+                                <div class="col-md-9 text-secondary gender">
+                                    <%= usr.Gender %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    DOB
+                                </div>
+                                <div class="col-md-9 text-secondary dob">
+                                    <%= usr.DOB %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Blood Group
+                                </div>
+                                <div class="col-md-9 text-secondary blood-group">
+                                    <%= usr.Bloodgroup %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Phone
+                                </div>
+                                <div class="col-md-9 text-secondary phone">
+                                    <%= usr.Phone %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    Address
+                                </div>
+                                <div class="col-md-9 text-secondary address">
+                                    <%= usr.Address %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-details">
+                    <table>
+                        <caption>Consultation History</caption>
+                        <tr>
+                            <th>BookingID</th>
+                            <th>Doctor's Name</th>
+                            <th>Department</th>
+                            <th>Date</th>
+                        </tr>
+                        <% for (var i=0; i<consult.length; i++) { %>
+                            <tr>
+                                <td><%= consult[i].Id %></td>
+                                <td><%= consult[i].DoctorName %></td>
+                                <td><%= consult[i].DoctorField %></td>
+                                <td><%= consult[i].Date %></td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <div class="box-details">
+                    <table>
+                        <caption>Test History</caption>
+                        <tr>
+                            <th>BookingID</th>
+                            <th>Lab-Test Name</th>
+                            <th>Date</th>
+                            <th>Results</th>
+                        </tr>
+                        <% for (var i=0; i<test.length; i++) { %>
+                            <tr>
+                                <td><%= test[i].Id %></td>
+                                <td><%= test[i].TestName %></td>
+                                <td><%= test[i].Date %></td>
+                                <td></td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+
+                <div class="box-details">
+                    <table>
+                        <caption>Medicine History</caption>
+                        <tr>
+                            <th>BookingID</th>
+                            <th>Medicine Name</th>
+                            <th>Quantity</th>
+                            <th>Date</th>
+                        </tr>
+                        <% for (var i=0; i<med.length; i++) { %>
+                            <tr>
+                                <td><%= med[i].Id %></td>
+                                <td><%= med[i].MedicineName %></td>
+                                <td><%= med[i].Quantity %></td>
+                                <td><%= med[i].Date %></td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        copyright &copy; www.MedCompanion.com. All rights reserved!
+    </footer>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="chat_frontend.js"></script>
+    <script type="text/javascript" src="book_frontend.js"></script>
+</body>
+
+</html>

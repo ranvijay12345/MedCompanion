@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="medicine.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="app.js"></script>
+    <title>Medicines</title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="images/logo.jpg" alt="MedCompanion">
+        </div>
+        <ul>
+            <li class="item"><a href="/">Home</a></li>
+            <li class="item"><a href="/consultation">Consultation</a></li>
+            <li class="item"><a href="/lab_test">Lab tests</a></li>
+            <li class="item"><a href="/medicine">Medicines</a></li>
+            <li class="item"><a href="/contact">Contact us</a></li>
+        </ul>
+        <% if (!session) {%>
+            <div id="enroll" class="btn">
+                <button id="login">login</button>
+                <div id="signup">
+                    <p>Don't have an account?</p>
+                    <p id="signuplink">sign up</p>
+                </div>
+            </div>
+            <% } else {%>
+                <div class="btn" id="logged-in">
+                    <button id="profile" onclick="location.href='/profile';"></button>
+                </div>
+                <% } %>
+    </nav>
+    <div class="popup-loginform" id="login-form">
+        <form action="/login" class="login-box" method="post">
+            <div class="login-head">
+                <h1>Login</h1>
+            </div>
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="login-email" required>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="login-psw" required>
+            <button type="submit" class="btn" id="login_btn">Login</button>
+            <button type="button" class="btn cancel" id="close_btn_login">Close</button>
+        </form>
+    </div>
+    <div class="popup-signupform" id="signup-form">
+        <form action="/signup" class="signup-box" method="post" id="signup-user">
+            <div class="signup-head">
+                <h1>Sign up</h1>
+            </div>
+            <div>
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Enter Name" name="name" required>
+            </div>
+            <div>
+                <label for="cntc"><b>Contact No.</b></label>
+                <input type="tel" placeholder="Enter Contact No." name="cntc" required>
+            </div>
+            <div>
+                <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter Address" name="address" required>
+            </div>
+            <div class="select">
+                <label for="gender"><b>Gender</b></label>
+                <select name="gender">
+                    <option value="none">select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+                <label for="blood"><b>Blood group</b></label>
+                <select name="blood">
+                    <option value="none">select blood group</option>
+                    <option value="A-">A-</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <label for="dob" id="dob"><b>Date of Birth</b></label>
+                <input type="date" name="dob" required>
+            </div>
+            <div>
+                <label for="email_add"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="email_add" required>
+            </div>
+            <div>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required>
+            </div>
+            <div>
+                <label for="repeat-password"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="repeat-password" id="repeat-password"
+                    required>
+            </div>
+            <div>
+                <button type="submit" class="btn" id="signup_btn">Sign up</button>
+                <button type="button" class="btn cancel" id="close_btn_signup">Close</button>
+            </div>
+        </form>
+    </div>
+    <div class="chatbot">
+        <button class="chat-icon" onclick="location.href='/chatbot';"></button>
+    </div>
+    <section class="medintro">
+        <h3>Medicine Home Delivery</h3>
+        <p>Order your required medicines as prescibed by any health specialist. We will deliver it to your house as quickly as posible.<br>We believe in qaulity and we'll provide you hygenic and certified medicines only.</p>
+    </section>
+    <section class="medicines">
+        <h1>Medicines</h1>
+        <form action="/book_medicine" method="post">
+            <div class="med-box">
+                <img src="images/medicine/dolo.webp" alt="error">
+                <div class="med-info"> 
+                    <h3>Dolo 650</h3>
+                    <h5 class="price">MRP: 2.05 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m1">quantity</label>
+                    <input type="number" name="m1" id="m1" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/Diamox.jpeg" alt="error">
+                <div class="med-info"> 
+                    <h3>Diamox</h3>
+                    <h5 class="price">MRP: 2.89 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m2">quantity</label>
+                    <input type="number" name="m2" id="m2" min="0" placeholder="0" max="500" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/zerodol.png" alt="error">
+                <div class="med-info"> 
+                    <h3>Zerodol -CR</h3>
+                    <h5 class="price">MRP: 6.24 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m3">quantity</label>
+                    <input type="number" name="m3" id="m3" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/leavo.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Leavocet 5mg</h3>
+                    <h5 class="price">MRP: 3.52 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m4">quantity</label>
+                    <input type="number" name="m4" id="m4" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/tusq.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Tusq-D 100ml</h3>
+                    <h5 class="price">MRP: 67.5 rupees</h5>
+                </div>
+                <div class="count">
+                    <label for="m5">quantity</label>
+                    <input type="number" name="m5" id="m5" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/armotraz.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Armotraz</h3>
+                    <h5 class="price">MRP: 55.3 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m6">quantity</label>
+                    <input type="number" name="m6" id="m6" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/beplex.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Beplex Forte</h3>
+                    <h5 class="price">MRP: 1.80 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m7">quantity</label>
+                    <input type="number" name="m7" id="m7" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/providac.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Providac Capsules</h3>
+                    <h5 class="price">MRP: 21.05 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m8">quantity</label>
+                    <input type="number" name="m8" id="m8" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/azithral.jpeg" alt="error">
+                <div class="med-info"> 
+                    <h3>Azithral</h3>
+                    <h5 class="price">MRP: 17.92 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m9">quantity</label>
+                    <input type="number" name="m9" id="m9" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/zyncovit.webp" alt="error">
+                <div class="med-info"> 
+                    <h3>Zincovit</h3>
+                    <h5 class="price">MRP: 5.86 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m10">quantity</label>
+                    <input type="number" name="m10" id="m10" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/salicylix.png" alt="error">
+                <div class="med-info"> 
+                    <h3>Salicylix SF12 50gm</h3>
+                    <h5 class="price">MRP: 157 rupees</h5>
+                </div>
+                <div class="count">
+                    <label for="m11">quantity</label>
+                    <input type="number" name="m11" id="m11" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/karpin.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Karpin Lotion 25ml</h3>
+                    <h5 class="price">MRP: 48.00 rupees/bottle</h5>
+                </div>
+                <div class="count">
+                    <label for="m12">quantity</label>
+                    <input type="number" name="m12" id="m12" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/medaflox.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Medaflox 200mg</h3>
+                    <h5 class="price">MRP: 3.87 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m13">quantity</label>
+                    <input type="number" name="m13" id="m13" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/fentrans.png" alt="error">
+                <div class="med-info"> 
+                    <h3>Fentrans 25mcg</h3>
+                    <h5 class="price">MRP: 415 rupees/pack</h5>
+                </div>
+                <div class="count">
+                    <label for="m14">quantity</label>
+                    <input type="number" name="m14" id="m14" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/melalite.png" alt="error">
+                <div class="med-info"> 
+                    <h3>Melalite Forte Cream 30gm</h3>
+                    <h5 class="price">MRP: 102.55 rupees/tube</h5>
+                </div>
+                <div class="count">
+                    <label for="m15">quantity</label>
+                    <input type="number" name="m15" id="m15" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/nefrosave.webp" alt="error">
+                <div class="med-info"> 
+                    <h3>Nefrosave Forte</h3>
+                    <h5 class="price">MRP: 17.4 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m16">quantity</label>
+                    <input type="number" name="m16" id="m16" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/potrate.webp" alt="error">
+                <div class="med-info"> 
+                    <h3>Potrate MB6 200ml</h3>
+                    <h5 class="price">MRP: 166 rupees/bottle</h5>
+                </div>
+                <div class="count">
+                    <label for="m17">quantity</label>
+                    <input type="number" name="m17" id="m17" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/vizylac.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Vizylac Rich Capsules</h3>
+                    <h5 class="price">MRP: 11.8 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m18">quantity</label>
+                    <input type="number" name="m18" id="m18" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/hepamerz.jpg" alt="error">
+                <div class="med-info"> 
+                    <h3>Hepamerz Granules</h3>
+                    <h5 class="price">MRP: 204 rupees/sachet(5gm)</h5>
+                </div>
+                <div class="count">
+                    <label for="m19">quantity</label>
+                    <input type="number" name="m19" id="m19" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="med-box">
+                <img src="images/medicine/tramazac.webp" alt="error">
+                <div class="med-info"> 
+                    <h3>Tramazac  -P</h3>
+                    <h5 class="price">MRP: 11.97 rupees/tablet</h5>
+                </div>
+                <div class="count">
+                    <label for="m20">quantity</label>
+                    <input type="number" name="m20" id="m20" min="0" placeholder="0" max="500">
+                </div>
+            </div>
+            <div class="ordermed">
+                <button class="medbtn" id="book_med">Order medicine now</button>
+            </div>
+        </form>
+        <% if(booking == 'error') { %>
+            <div class="popup-cnfm" id="booking-login-err">
+                <div class="cnfm-icon">
+                    <i class="material-icons booking-med-err">&#xe000;</i>
+                </div>
+                <h3 class="cnfm-head">Oops!</h3>
+                <div class="cnfm-para">
+                    <p>Please log in first to book a lab test.</p>
+                </div>
+                <div class="cnfm-btn">
+                    <button id="booking-err-ok" onclick=booking_err_close()>OK</button>
+                </div>
+            </div>
+            <% } else if (booking == 'success') { %>
+                <div class="popup-cnfm" id="booking-cnfm">
+                    <div class="cnfm-icon">
+                        <i class="material-icons">&#xE876;</i>
+                    </div>
+                    <h3 class="cnfm-head">Awesome!</h3>
+                    <div class="cnfm-para">
+                        <p>Your booking has been confirmed.</p>
+                        <p>Check your mail for detailes.</p>
+                    </div>
+                    <div class="cnfm-btn">
+                        <button id="booking-cnfm-ok" onclick=booking_cnfm_close()>OK</button>
+                    </div>
+                </div>
+                <% } else if (booking == 'insufficient') { %>
+                    <div class="popup-cnfm" id="booking-login-err2">
+                        <div class="cnfm-icon">
+                            <i class="material-icons booking-med-err">&#xe000;</i>
+                        </div>
+                        <h3 class="cnfm-head">Oops!</h3>
+                        <div class="cnfm-para">
+                            <p>We are currently of stock the medicine you ordered.</p>
+                        </div>
+                        <div class="cnfm-btn">
+                            <button id="booking-err2-ok" onclick=booking_err2_close()>OK</button>
+                        </div>
+                        <% } %>
+    </section>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="chat_frontend.js"></script>
+    <script type="text/javascript" src="book_frontend.js"></script>
+</body>
+</html>

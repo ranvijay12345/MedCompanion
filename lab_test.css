@@ -1,0 +1,533 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*for navbar*/
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    height: 80px;
+    background-color: deepskyblue;
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#navbar img{
+    width: 85px;
+    height: 65px;
+}
+#logo{
+    margin: 0px 23px;
+    margin-top: 4px;
+    margin-left: 50px;
+}
+#navbar ul{
+    display: flex;
+    margin-left: 17px;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+#navbar ul li a{
+    color: black;
+    display: block;
+    padding: 8px 18px;
+    margin: 20px 10px;
+    margin-top: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 20px;
+}
+#navbar ul li a:hover{
+    background-color: rgb(31, 180, 218);
+    color: rgb(252, 250, 250);
+}
+#enroll{
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+#login{
+    background-color: #4175e666;
+    color: white;
+    border-radius: 4px;
+    margin-top: 17px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+#login:hover{
+    background-color: #1b34a3ad;
+}
+#signup{
+    padding: 15px 13px;
+    font-size: 14px;
+    color: black;
+}
+#signup #signuplink{
+    text-align: center;
+    text-decoration: none;
+}
+#signuplink:hover{
+    cursor: pointer;
+    color: white;
+}
+#text{
+    padding-top: 20px;
+}
+#logged-in{
+    display: block;
+    margin-left: auto;
+    margin-right: 0px;
+    height: 100%;
+    width: 85px;
+    justify-content: center;
+}
+#profile{
+    background: url('/images/profile.jfif') no-repeat center center/cover;
+    height: 56px;
+    width: 60px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* for login */
+
+.popup-loginform {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 0px;
+    border: 2px solid black;
+    z-index: 9;
+    border-radius: 10px;
+}
+.login-head > h1, .frgt-head > h1{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.login-box{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.login-box input[type=email], .login-box input[type=password], .frgt-psw-box input[type=email]{
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+#login-psw{
+    margin-bottom: 5px;
+}
+.login-box input[type=email]:focus, .login-box input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.frgt{
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+.login-box .btn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.login-box .cancel{
+    background-color: red;
+}
+.login-box .btn:hover{
+    opacity: 1;
+}
+.popup-signupform{
+    display: none;
+    position: fixed;
+    top: 5px;
+    left: 500px;
+    z-index: 9;
+}
+.signup-head > h1{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.signup-box {
+    display: block;
+    width: 500px;
+    padding: 10px;
+    background-color: rgb(245, 249, 250);
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.signup-box > div{
+    display: block;
+    width: 100%;
+}
+.signup-box > div > label{
+    padding-top: 15px;
+    margin-right: 5px;
+    font: bold;
+}
+.signup-box input[type=email], .signup-box input[type=password], .signup-box input[type=text], .signup-box input[type=tel]{
+    width: 96%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background-color: #ddd;
+    outline: none;
+}
+.signup-box .select > select{
+    margin-left: 5px;
+    padding: 5px;
+    margin: 5px 0 22px 0;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+}
+.select{
+    margin-bottom: 10px;
+}
+.select #dob{
+    margin-left: 100px;
+}
+.select input[type=date]{
+    padding: 5px;
+}
+.signup-box .select > label{
+    margin-left: 20px;
+    margin-right: 5px;
+}
+.signup-box .btn, .book_time_form .btn, .predict_btns .btn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+.signup-box #signup_btn{
+    margin-left: 50px;
+    margin-right: 10px;
+}
+.signup-box .cancel, .book_time_form .cancel, .predict_btns .cancel{
+    background-color: red;
+}
+.signup-box .btn:hover, .book_time_form .btn:hover, .predict_btns .btn:hover{
+    opacity: 1;
+}
+
+/* for chatbot */
+
+.chat-icon{
+    background: url('images/chatbot.jpg') no-repeat center center/cover;
+    display: flex;
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    z-index: 2;
+    height: 60px;
+    width: 70px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.chat-icon:hover{
+    cursor: pointer;
+}
+
+/* for steps */
+
+.steps > h1, .test-section > h1, .prediction > h1{
+    font-size: 2rem;
+    padding: 20px;
+    text-align: center;
+    color: rgb(119, 117, 117);
+}
+.steps-container{
+    padding: 40px 240px;
+}
+.box{
+    display: inline-flex;
+    margin: 40px 0px;
+}
+.box > img{
+    height: 170px;
+    width: 230px;
+}
+.box > h3{
+    padding-right: 20px;
+    font-size: 3rem;
+    padding-top: 40px;
+    color: rgb(182, 177, 177);
+}
+.box #description{
+    padding-right: 80px;
+}
+.box #description #heading{
+    padding-top: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+.box > p{
+    padding-top: 40px;
+}
+.left-box > h3{
+    padding-left: 200px;
+}
+.right-box > h3{
+    padding-left: 50px;
+}
+.right-box #description{
+    padding-right: 200px;
+}
+.right-box img{
+    padding-right: 20px;
+}
+
+/* for tests */
+
+.test-section > form{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.test-section > form  .test-container {
+    width: 30%;
+    display: flex;
+    border: 2px solid black;
+    height: 150px;
+    background-color: #ff739275;
+    border-radius: 10px;
+    margin: 7px;
+}
+.test-section > form  .test-container > img{
+    height: 120px;
+    width: 170px;
+    margin: 15px 5px;
+}
+.test-section > form > .test-container .name{
+    margin: 57px 5px;
+}
+.test-section > form > .test-container > input{
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: 61px;
+    cursor: pointer;
+}
+.booktest{
+    margin: 30px;
+    text-align: center;
+}
+.testbtn{
+    font-size: 1.2rem;
+    height: 50px;
+    width: 400px;
+    border-radius: 20px;
+    color: rgb(69, 76, 82);
+    border: 2px soild black;
+    background-color: rgb(247, 115, 115);
+}
+.testbtn:hover{
+    background-color: rgb(247, 71, 71);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+/* for confirmation */
+
+#book_time{
+    display: block;
+    padding: 5px 10px;
+}
+.book_time_head{
+    margin: 20px 10px;
+    font-size: 1.5rem;
+}
+.book_time_form{
+    padding: 10px 5px;
+    margin-top: 13px;
+}
+.book_time_form > input{
+    padding: 5px 5px;
+    margin: 10px 5px;
+    margin-bottom: 20px;
+}
+#date{
+    width: 125px;
+}
+#booking_btn{
+    margin-right: 10px;
+}
+
+/* for booking acknowledgement */
+
+.popup-cnfm{
+    z-index: 9;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    top: 200px;
+    left: 570px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 6px 25px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+}
+.material-icons{
+    background-color: rgb(116, 192, 3);
+    border-radius: 50%;
+    color: white;
+    padding: 10px;
+    margin-top: -30px;
+}
+.cnfm-icon i {
+    font-size: 40px;
+}
+.cnfm-head{
+    font-size: 30px;
+    margin: 20px 0px;
+}
+.cnfm-para > p{
+    margin: 3px 0px;
+}
+.cnfm-para{
+    margin-bottom: 30px;
+}
+.cnfm-btn > button{
+    width: 325px;
+    height: 40px;
+    margin: 30px 20px;
+    margin-top: 20px;
+    background-color: rgb(116, 192, 3);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.cnfm-btn > button:hover{
+    cursor: pointer;
+    background-color: rgb(95, 156, 2);
+}
+.booking-test-err{
+    background-color: rgb(236, 80, 80);
+}
+#booking-err-ok{
+    background-color: rgb(236, 80, 80);
+}
+
+/* for prediction */
+
+#predict_form{
+    top: 140px;
+}
+.predict_box{
+    display: block;
+    width: 500px;
+    padding: 10px;
+    background-color: rgb(245, 249, 250);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+.predict_head{
+    text-align: center;
+    margin: 15px;
+    font-size: 1.5rem;
+}
+.predict_box > div {
+    text-align: center;
+}
+.predict_box > div > label{
+    margin: 10px 0px;
+}
+.predict_box > div > input, .predict_box > div > select{
+    margin: 10px 0px;
+    margin-right: 20px;
+    padding: 3px;
+}
+.predict_btns{
+    text-align: center;
+    margin: 10px;
+}
+#predict_btn {
+    margin-right: 10px;
+}
+.predict_box > div > textarea{
+    width: 225px;
+}
+
+/* predict result */
+
+.popup-cnfm{
+    z-index: 9;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    top: 200px;
+    left: 570px;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 6px 25px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+}
+.material-icons{
+    background-color: rgb(116, 192, 3);
+    border-radius: 50%;
+    color: white;
+    padding: 10px;
+    margin-top: -30px;
+}
+.cnfm-icon i {
+    font-size: 40px;
+}
+.cnfm-head{
+    font-size: 30px;
+    margin: 20px 0px;
+}
+.cnfm-para > p{
+    margin: 3px 0px;
+}
+.cnfm-para{
+    margin-bottom: 30px;
+}
+.cnfm-btn > button{
+    width: 325px;
+    height: 40px;
+    margin: 30px 20px;
+    margin-top: 20px;
+    background-color: rgb(116, 192, 3);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
+.predict-btn > button:hover{
+    cursor: pointer;
+    background-color: rgb(95, 156, 2);
+}
+#predict0{
+    background-color: rgb(236, 80, 80);
+}
+#predict-ok0{
+    background-color: rgb(236, 80, 80);
+}

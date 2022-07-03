@@ -1,0 +1,280 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'poppins', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/*for navbar*/
+
+#navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    height: 80px;
+    background-color: white;
+    z-index: 2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#navbar img{
+    width: 85px;
+    height: 65px;
+}
+#logo{
+    margin: 0px 23px;
+    margin-top: 4px;
+    margin-left: 50px;
+}
+#navbar ul{
+    display: flex;
+    margin-left: 17px;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.5rem;
+}
+#navbar ul li a {
+    color: black;
+    display: block;
+    padding: 8px 18px;
+    margin: 20px 10px;
+    margin-top: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 20px;
+}
+#navbar ul li a:hover{
+    background-color: rgb(31, 180, 218);
+    color: rgb(252, 250, 250);
+}
+#enroll{
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+#login {
+    background-color: #3fa2f366;
+    color: black;
+    border-radius: 4px;
+    margin-top: 17px;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+#login:hover {
+    background-color: #3fa2f3ad;
+}
+#signup {
+    padding: 15px 13px;
+    font-size: 14px;
+    color: black;
+}
+#signup #signuplink {
+    text-align: center;
+    text-decoration: none;
+}
+#signuplink:hover {
+    cursor: pointer;
+    color: rgb(8 8 8 / 70%);
+}
+#text{
+    padding-top: 20px;
+}
+#logged-in{
+    display: none;
+    margin-left: auto;
+    margin-right: 0px;
+    background-color: skyblue;
+    height: 100%;
+    width: 85px;
+    justify-content: center;
+}
+#profile{
+    background: url('/images/profile.jfif') no-repeat center center/cover;
+    height: 45px;
+    width: 48px;
+    margin-top: 17px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.sidebar{
+    background-color: rgb(82, 80, 80);
+    color: white;
+    height: 100%;
+    width: 300px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 25px;
+}
+.rounded-circle{
+    border-radius: 100%;
+    width: 35%;
+    padding-top: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar p{
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+.a123{
+    display: inline-flex;
+    margin-left: 110px;
+}
+.mt-1{
+    display: inline-block;
+    padding: 20px;
+    margin: 15px;
+}
+.row1{
+    display: flex;
+    /* border: 2px red solid; */
+    text-align: justify;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.content{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: row;
+    background: rgb(82, 80, 80);
+    
+}
+
+.user-details1{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(197, 147, 147);
+}
+
+.card-body{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 600px;
+    height: 41vh;
+    text-align: center;
+    justify-content: space-between;
+    background: rgb(82, 80, 80);
+    color: whitesmoke;
+    border-radius: 8px;
+}
+.card-body .row{
+    display: flex;
+    flex-direction: row;
+    /* border: 2px red solid; */
+    margin-left: 0;
+    padding-left: 0;
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+}
+hr{
+    color: black;
+}
+.mt-3{
+    margin-top: 15px;
+}
+.mt-3 > p {
+    margin-top: 5px;
+}
+.col-md-3{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.col-md-9{
+    float: right;
+    padding-left: 250px;
+}
+button{
+    background: rgb(2, 83, 129);
+    border-radius: 5px;
+    color: azure;
+}
+button:hover{
+    background: aquamarine;
+    cursor: pointer;
+    color: rgb(109, 99, 99);
+}
+.id{
+    padding-left: 240px;
+}
+.name{
+    padding-left: 218px;
+}
+.gender{
+    padding-left: 242px;
+}
+.dob{
+    padding-left: 265px;
+}
+.blood-group{
+    padding-left:195px;
+}
+.email{
+    padding-left:255px;
+}
+.phone{
+    padding-left: 250px
+}
+.address{
+    padding-left:230px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 10px;
+}
+.box .box-details{
+    margin: 10px 11px;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 25px 20px;
+    background: rgb(82, 80, 80);
+    font-size: normal;
+    color: white;
+    text-align: left;
+}
+
+
+/* Table content CSS */
+table, tr, td, th {
+    border: 1px solid white;
+    text-align: center;
+}
+
+td {
+    margin: 5px;
+    padding: 15px;
+}
+
+caption{
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(226, 168, 168);
+}
+
+/* for footer */
+
+footer{
+    background-color: rgb(95, 93, 93);
+    color: white;
+    text-align: center;
+    padding: 10px;
+} 
